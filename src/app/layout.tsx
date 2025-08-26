@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import ThemeToggle from "../components/ThemeToggle";
+import Sidebar from "../components/Sidebar";
 import "./globals.css";
+import { DocProvider } from "../context/DocContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,10 +27,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
+        {/* Theme Toggle Button */}
+        <ThemeToggle />
+        <DocProvider>
+          <div className="flex min-h-screen">
+            {/* Sidebar Navigation */}
+            <div className="hidden md:block">
+              {/* Sidebar component */}
+              <div className="h-full">
+                <Sidebar />
+              </div>
+            </div>
+            {/* Main Content */}
+            <main className="flex-1 p-6 md:p-12">{children}</main>
+          </div>
+        </DocProvider>
       </body>
     </html>
   );
