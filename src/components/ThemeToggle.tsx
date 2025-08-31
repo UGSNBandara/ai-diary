@@ -2,7 +2,6 @@
 
 "use client";
 import React from "react";
-import { Switch } from "@headlessui/react";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 
 export default function ThemeToggle() {
@@ -27,24 +26,22 @@ export default function ThemeToggle() {
   }, [enabled]);
 
   return (
-    <div className="fixed top-4 right-4 z-50">
-      <Switch
-        checked={enabled}
-        onChange={setEnabled}
-        className={`relative inline-flex h-10 w-20 items-center rounded-full bg-gray-200 dark:bg-gray-800 transition focus:outline-none focus:ring-2 focus:ring-blue-500 shadow`}
-        aria-label="Toggle light/dark theme"
+    <div className="fixed top-4 right-6 z-50">
+      <button
+        onClick={() => setEnabled(!enabled)}
+        className={`p-3 rounded-full transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+          enabled 
+            ? "bg-gray-800 text-yellow-400 hover:bg-gray-700 focus:ring-yellow-400" 
+            : "bg-white text-gray-800 hover:bg-gray-50 focus:ring-blue-500 shadow-md"
+        }`}
+        aria-label="Toggle theme"
       >
-        <span className="sr-only">Toggle Theme</span>
-        <span className="absolute left-2">
-          <SunIcon className={`h-6 w-6 text-yellow-500 ${enabled ? "opacity-40" : "opacity-100"}`} />
-        </span>
-        <span className="absolute right-2">
-          <MoonIcon className={`h-6 w-6 text-blue-500 ${enabled ? "opacity-100" : "opacity-40"}`} />
-        </span>
-        <span
-          className={`inline-block h-8 w-8 transform rounded-full bg-white dark:bg-gray-900 shadow transition-transform ${enabled ? "translate-x-10" : "translate-x-0"}`}
-        />
-      </Switch>
+        {enabled ? (
+          <SunIcon className="h-5 w-5" />
+        ) : (
+          <MoonIcon className="h-5 w-5" />
+        )}
+      </button>
     </div>
   );
 }

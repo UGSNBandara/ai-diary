@@ -4,26 +4,32 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --box-bg: #f5f5f5;
+  --background-secondary: #f9fafb;
+  --box-bg: #ffffff;
   --box-border: #e5e7eb;
   --primary: #2563eb;
   --secondary: #64748b;
   --accent: #f59e42;
   --text-main: #171717;
   --text-muted: #64748b;
+  --sidebar-bg: #f9fafb;
+  --sidebar-border: #e5e7eb;
 }
 
 /* Dark theme overrides */
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --box-bg: #171717;
-  --box-border: #333;
+  --background: #0f172a;
+  --foreground: #f1f5f9;
+  --background-secondary: #1e293b;
+  --box-bg: #1e293b;
+  --box-border: #334155;
   --primary: #60a5fa;
   --secondary: #94a3b8;
   --accent: #fbbf24;
-  --text-main: #ededed;
+  --text-main: #f1f5f9;
   --text-muted: #94a3b8;
+  --sidebar-bg: #0f172a;
+  --sidebar-border: #334155;
 }
 
 body {
@@ -38,9 +44,14 @@ body {
   border: 1px solid var(--box-border);
   color: var(--text-main);
   border-radius: 0.75rem;
-  padding: 1.5rem;
+  padding: 2rem;
   margin-bottom: 1.5rem;
   transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.dark .box {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .text-primary {
@@ -54,4 +65,215 @@ body {
 }
 .text-muted {
   color: var(--text-muted);
+}
+
+/* Main content area background */
+.main-content-bg {
+  background-color: var(--background-secondary);
+}
+
+/* Sidebar theming */
+.sidebar-bg {
+  background-color: var(--sidebar-bg);
+  border-color: var(--sidebar-border);
+}
+
+/* Content styling */
+.prose {
+  color: var(--text-main);
+}
+
+.prose img {
+  max-width: 100%;
+  max-height: 400px; /* Limit maximum height */
+  width: auto;
+  height: auto;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid var(--box-border);
+  object-fit: contain; /* Maintain aspect ratio */
+  display: block; /* Center the image */
+}
+
+/* Small images - for icons or small diagrams */
+.prose img[alt*="small"], 
+.prose img[src*="icon"],
+.prose img[src*="small"] {
+  max-width: 200px;
+  max-height: 150px;
+}
+
+/* Medium images - for diagrams and charts */
+.prose img[alt*="medium"],
+.prose img[src*="diagram"],
+.prose img[src*="chart"] {
+  max-width: 500px;
+  max-height: 350px;
+}
+
+/* Large images - for detailed screenshots or complex diagrams */
+.prose img[alt*="large"],
+.prose img[src*="screenshot"],
+.prose img[src*="large"] {
+  max-width: 800px;
+  max-height: 600px;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+  .prose img {
+    max-height: 250px;
+  }
+  
+  .prose img[alt*="large"] {
+    max-width: 100%;
+    max-height: 300px;
+  }
+}
+
+.prose a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.prose a:hover {
+  color: var(--accent-blue-hover);
+  text-decoration: underline;
+}
+
+/* Special styling for internal navigation links */
+.prose a[href^="#doc:"] {
+  color: var(--accent-blue);
+  text-decoration: underline;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.prose a[href^="#doc:"]:hover {
+  color: var(--accent-blue-hover);
+  text-decoration: underline;
+  border-bottom-color: var(--accent-blue-hover);
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: var(--text-main);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.prose ul, .prose ol {
+  color: var(--text-muted);
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose code {
+  background-color: var(--box-bg);
+  color: var(--accent-blue);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--accent-blue);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+.prose hr {
+  border-color: var(--box-border);
+  margin: 2rem 0;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+  color: var(--text-main);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose h1 {
+  font-size: 2.25rem;
+  color: var(--primary);
+}
+
+.prose h2 {
+  font-size: 1.875rem;
+  color: var(--secondary);
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+}
+
+.prose p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.7;
+  color: var(--text-main);
+}
+
+.prose ul, .prose ol {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+
+.prose li {
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  color: var(--text-main);
+}
+
+.prose code {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  color: var(--text-main);
+}
+
+.dark .prose code {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.prose pre {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+.dark .prose pre {
+  background-color: #1f2937;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1rem;
+  font-style: italic;
+  margin: 1.5em 0;
+  color: var(--text-muted);
+}
+
+.prose strong {
+  color: var(--text-main);
+  font-weight: 600;
 }

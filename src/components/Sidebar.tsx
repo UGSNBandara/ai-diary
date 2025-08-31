@@ -14,71 +14,59 @@ const categories: { name: string; sub: SubCategory[] }[] = [
 		sub: [
             {
 				label: "Introduction",
-				doc: "ml-intro",
+				children: [
+					{
+						label: "Basics",
+						doc: "machine-learning__introduction__basics",
+					},
+					{
+						label: "Data Collecting",
+						doc: "machine-learning__introduction__data-collecting",
+					}
+				],
 			},
 			{
 				label: "Supervised Learning",
-				doc: "ml-intro",
 				children: [
 					{
-						label: "Introduction",
-						doc: "ml-intro",
+						label: "Overview",
+						doc: "machine-learning__supervised-learning__overview",
 					},
 					{
 						label: "Algorithms",
 						children: [
-							{ label: "Linear Regression", doc: "ml-intro" },
-							{ label: "Logistic Regression", doc: "ml-intro" },
-							{ label: "Decision Trees", doc: "ml-intro" },
-							{ label: "Random Forests", doc: "ml-intro" },
-							{ label: "Support Vector Machines", doc: "ml-intro" },
-							{ label: "K-Nearest Neighbors", doc: "ml-intro" },
-							{ label: "Naive Bayes", doc: "ml-intro" },
+							{ label: "Linear Regression", doc: "machine-learning__supervised-learning__algorithms__linear-regression" },
+							{ label: "Decision Trees", doc: "machine-learning__supervised-learning__algorithms__decision-trees" },
+							{ label: "Support Vector Machines", doc: "machine-learning__supervised-learning__algorithms__svm" },
+							{ label: "Logistic Regression", doc: "machine-learning__supervised-learning__algorithms__logistic-regression" },
+							{ label: "Random Forests", doc: "machine-learning__supervised-learning__algorithms__random-forests" },
+							{ label: "K-Nearest Neighbors", doc: "machine-learning__supervised-learning__algorithms__knn" },
+							{ label: "Naive Bayes", doc: "machine-learning__supervised-learning__algorithms__naive-bayes" },
 						],
 					},
 				],
 			},
 			{
 				label: "Unsupervised Learning",
-				doc: "ml-intro",
 				children: [
 					{
-						label: "Introduction",
-						doc: "ml-intro",
+						label: "Overview",
+						doc: "machine-learning__unsupervised-learning__overview",
 					},
 					{
 						label: "Algorithms",
 						children: [
-							{ label: "K-Means Clustering", doc: "ml-intro" },
-							{ label: "Hierarchical Clustering", doc: "ml-intro" },
-							{ label: "PCA", doc: "ml-intro" },
-							{ label: "DBSCAN", doc: "ml-intro" },
-						],
-					},
-				],
-			},
-			{
-				label: "Reinforcement Learning",
-				doc: "rl-overview",
-				children: [
-					{
-						label: "Introduction",
-						doc: "rl-overview",
-					},
-					{
-						label: "Algorithms",
-						children: [
-							{ label: "Q-Learning", doc: "rl-overview" },
-							{ label: "SARSA", doc: "rl-overview" },
-							{ label: "Policy Gradients", doc: "rl-overview" },
-							{ label: "DQN", doc: "rl-overview" },
+							{ label: "K-Means Clustering", doc: "machine-learning__unsupervised-learning__algorithms__kmeans" },
+							{ label: "Hierarchical Clustering", doc: "machine-learning__unsupervised-learning__algorithms__hierarchical" },
+							{ label: "PCA", doc: "machine-learning__unsupervised-learning__algorithms__pca" },
+							{ label: "DBSCAN", doc: "machine-learning__unsupervised-learning__algorithms__dbscan" },
 						],
 					},
 				],
 			},
 			{
 				label: "Applied ML",
-				doc: "ml-intro",
+				doc: "machine-learning__applied__overview",
 			},
 		],
 	},
@@ -86,81 +74,46 @@ const categories: { name: string; sub: SubCategory[] }[] = [
 		name: "Deep Learning",
 		sub: [
 			{
-				label: "Introduction",
-				doc: "dl-basics",
-			},
-			{
-				label: "Feedforward Neural Networks",
+				label: "Neural Networks",
 				children: [
-					{ label: "Introduction", doc: "dl-basics" },
-					{ label: "Theory", doc: "dl-basics" },
-					{ label: "Applications", doc: "dl-basics" },
+					{ label: "Basics", doc: "deep-learning__neural-networks__basics" },
+					{ label: "Training", doc: "deep-learning__neural-networks__training" },
+					{ label: "Optimization", doc: "deep-learning__neural-networks__optimization" },
 				],
 			},
 			{
-				label: "Convolutional Neural Networks (CNNs)",
+				label: "Convolutional Neural Networks",
 				children: [
-					{ label: "Introduction", doc: "dl-basics" },
-					{ label: "Theory", doc: "dl-basics" },
-					{ label: "Image Classification", doc: "dl-basics" },
-					{ label: "Object Detection", doc: "dl-basics" },
+					{ label: "Introduction", doc: "deep-learning__cnn__introduction" },
+					{ label: "Architecture", doc: "deep-learning__cnn__architecture" },
+					{ label: "Image Classification", doc: "deep-learning__cnn__classification" },
+					{ label: "Object Detection", doc: "deep-learning__cnn__detection" },
 				],
 			},
 			{
-				label: "Recurrent Neural Networks (RNNs)",
+				label: "Recurrent Neural Networks",
 				children: [
-					{ label: "Introduction", doc: "dl-basics" },
-					{ label: "Theory", doc: "dl-basics" },
-					{ label: "Sequence Modeling", doc: "dl-basics" },
+					{ label: "Introduction", doc: "deep-learning__rnn__introduction" },
+					{ label: "LSTM", doc: "deep-learning__rnn__lstm" },
+					{ label: "GRU", doc: "deep-learning__rnn__gru" },
+					{ label: "Sequence Modeling", doc: "deep-learning__rnn__sequence-modeling" },
 				],
 			},
 			{
 				label: "Transformers",
 				children: [
-					{ label: "Introduction", doc: "dl-basics" },
-					{ label: "Theory", doc: "dl-basics" },
-					{ label: "NLP Applications", doc: "dl-basics" },
+					{ label: "Introduction", doc: "deep-learning__transformers__introduction" },
+					{ label: "Attention Mechanism", doc: "deep-learning__transformers__attention" },
+					{ label: "BERT", doc: "deep-learning__transformers__bert" },
+					{ label: "GPT", doc: "deep-learning__transformers__gpt" },
 				],
 			},
 			{
 				label: "Generative Models",
 				children: [
-					{ label: "GANs", doc: "dl-basics" },
-					{ label: "VAEs", doc: "dl-basics" },
-				],
-			},
-			{
-				label: "Applied DL",
-				doc: "dl-basics",
-			},
-		],
-	},
-	{
-		name: "AI Agents",
-		sub: [
-			{
-				label: "Introduction",
-				doc: "ml-intro",
-			},
-			{
-				label: "LangGraph",
-				children: [
-					{ label: "Introduction", doc: "ml-intro" },
-					{ label: "Use Cases", doc: "ml-intro" },
-				],
-			},
-			{
-				label: "Prompt Engineering",
-				children: [
-					{ label: "Introduction", doc: "ml-intro" },
-					{ label: "Techniques", doc: "ml-intro" },
-				],
-			},
-			{
-				label: "Agent Architectures",
-				children: [
-					{ label: "Introduction", doc: "ml-intro" },
-					{ label: "Practical Agents", doc: "ml-intro" },
+					{ label: "GANs", doc: "deep-learning__generative__gans" },
+					{ label: "VAEs", doc: "deep-learning__generative__vaes" },
+					{ label: "Diffusion Models", doc: "deep-learning__generative__diffusion" },
 				],
 			},
 		],
@@ -169,28 +122,65 @@ const categories: { name: string; sub: SubCategory[] }[] = [
 		name: "Reinforcement Learning",
 		sub: [
 			{
-				label: "Introduction",
-				doc: "rl-overview",
+				label: "Overview",
+				doc: "reinforcement-learning__overview",
 			},
 			{
-				label: "Algorithms",
+				label: "Value-Based Methods",
 				children: [
-					{ label: "Q-Learning", doc: "rl-overview" },
-					{ label: "SARSA", doc: "rl-overview" },
-					{ label: "Policy Gradients", doc: "rl-overview" },
-					{ label: "DQN", doc: "rl-overview" },
+					{ label: "Q-Learning", doc: "reinforcement-learning__value-based__q-learning" },
+					{ label: "SARSA", doc: "reinforcement-learning__value-based__sarsa" },
+					{ label: "DQN", doc: "reinforcement-learning__value-based__dqn" },
+				],
+			},
+			{
+				label: "Policy-Based Methods",
+				children: [
+					{ label: "Policy Gradients", doc: "reinforcement-learning__policy-based__policy-gradients" },
+					{ label: "Actor-Critic", doc: "reinforcement-learning__policy-based__actor-critic" },
+					{ label: "PPO", doc: "reinforcement-learning__policy-based__ppo" },
 				],
 			},
 			{
 				label: "Multi-Agent RL",
 				children: [
-					{ label: "Introduction", doc: "rl-overview" },
-					{ label: "Theory", doc: "rl-overview" },
+					{ label: "Introduction", doc: "reinforcement-learning__multi-agent__introduction" },
+					{ label: "Cooperative Learning", doc: "reinforcement-learning__multi-agent__cooperative" },
+					{ label: "Competitive Learning", doc: "reinforcement-learning__multi-agent__competitive" },
+				],
+			},
+		],
+	},
+	{
+		name: "AI Agents",
+		sub: [
+			{
+				label: "Overview",
+				doc: "ai-agents__overview",
+			},
+			{
+				label: "LangChain",
+				children: [
+					{ label: "Introduction", doc: "ai-agents__langchain__introduction" },
+					{ label: "Chains", doc: "ai-agents__langchain__chains" },
+					{ label: "Agents", doc: "ai-agents__langchain__agents" },
 				],
 			},
 			{
-				label: "Practical RL",
-				doc: "rl-overview",
+				label: "LangGraph",
+				children: [
+					{ label: "Introduction", doc: "ai-agents__langgraph__introduction" },
+					{ label: "Workflows", doc: "ai-agents__langgraph__workflows" },
+					{ label: "Use Cases", doc: "ai-agents__langgraph__use-cases" },
+				],
+			},
+			{
+				label: "Prompt Engineering",
+				children: [
+					{ label: "Fundamentals", doc: "ai-agents__prompt-engineering__fundamentals" },
+					{ label: "Techniques", doc: "ai-agents__prompt-engineering__techniques" },
+					{ label: "Best Practices", doc: "ai-agents__prompt-engineering__best-practices" },
+				],
 			},
 		],
 	},
@@ -199,31 +189,31 @@ const categories: { name: string; sub: SubCategory[] }[] = [
 		sub: [
 			{
 				label: "Introduction",
-				doc: "ml-intro",
+				doc: "game-ai__introduction",
 			},
 			{
 				label: "Pathfinding",
 				children: [
-					{ label: "A* Algorithm", doc: "ml-intro" },
-					{ label: "Dijkstra's Algorithm", doc: "ml-intro" },
+					{ label: "A* Algorithm", doc: "game-ai__pathfinding__astar" },
+					{ label: "Dijkstra's Algorithm", doc: "game-ai__pathfinding__dijkstra" },
+					{ label: "Navigation Meshes", doc: "game-ai__pathfinding__navmesh" },
 				],
 			},
 			{
 				label: "NPC Behavior",
 				children: [
-					{ label: "Finite State Machines", doc: "ml-intro" },
-					{ label: "Behavior Trees", doc: "ml-intro" },
+					{ label: "Finite State Machines", doc: "game-ai__npc__fsm" },
+					{ label: "Behavior Trees", doc: "game-ai__npc__behavior-trees" },
+					{ label: "Goal-Oriented Action Planning", doc: "game-ai__npc__goap" },
 				],
 			},
 			{
 				label: "Procedural Generation",
 				children: [
-					{ label: "Introduction", doc: "ml-intro" },
+					{ label: "Introduction", doc: "game-ai__procedural__introduction" },
+					{ label: "Terrain Generation", doc: "game-ai__procedural__terrain" },
+					{ label: "Content Generation", doc: "game-ai__procedural__content" },
 				],
-			},
-			{
-				label: "Practical Game AI",
-				doc: "ml-intro",
 			},
 		],
 	},
@@ -232,32 +222,31 @@ const categories: { name: string; sub: SubCategory[] }[] = [
 		sub: [
 			{
 				label: "Introduction",
-				doc: "ml-intro",
+				doc: "human-interaction__introduction",
 			},
 			{
 				label: "Speech Recognition",
 				children: [
-					{ label: "Introduction", doc: "ml-intro" },
-					{ label: "Techniques", doc: "ml-intro" },
+					{ label: "Introduction", doc: "human-interaction__speech__introduction" },
+					{ label: "ASR Techniques", doc: "human-interaction__speech__asr" },
+					{ label: "Voice Assistants", doc: "human-interaction__speech__assistants" },
 				],
 			},
 			{
-				label: "Vision AI",
+				label: "Computer Vision",
 				children: [
-					{ label: "Introduction", doc: "ml-intro" },
-					{ label: "Applications", doc: "ml-intro" },
+					{ label: "Introduction", doc: "human-interaction__vision__introduction" },
+					{ label: "Face Recognition", doc: "human-interaction__vision__face-recognition" },
+					{ label: "Gesture Recognition", doc: "human-interaction__vision__gestures" },
 				],
 			},
 			{
-				label: "Chatbots",
+				label: "Conversational AI",
 				children: [
-					{ label: "Introduction", doc: "ml-intro" },
-					{ label: "Techniques", doc: "ml-intro" },
+					{ label: "Chatbots", doc: "human-interaction__conversational__chatbots" },
+					{ label: "Dialogue Systems", doc: "human-interaction__conversational__dialogue" },
+					{ label: "Context Understanding", doc: "human-interaction__conversational__context" },
 				],
-			},
-			{
-				label: "Practical AI",
-				doc: "ml-intro",
 			},
 		],
 	},
@@ -268,7 +257,14 @@ function renderSub(sub: SubCategory, setSelectedDoc: (doc: string) => void): Rea
 		return (
 			<li key={sub.label}>
 				<details className="group">
-					<summary className="cursor-pointer font-semibold text-base text-gray-700 dark:text-gray-200 py-1 px-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800">
+					<summary className="cursor-pointer font-semibold text-base py-1 px-2 rounded transition-colors duration-200" 
+						style={{ color: 'var(--text-main)' }}
+						onMouseEnter={(e) => {
+							e.currentTarget.style.backgroundColor = 'var(--box-border)';
+						}}
+						onMouseLeave={(e) => {
+							e.currentTarget.style.backgroundColor = 'transparent';
+						}}>
 						{sub.label}
 					</summary>
 					<ul className="ml-4 mt-1 space-y-1">
@@ -281,7 +277,16 @@ function renderSub(sub: SubCategory, setSelectedDoc: (doc: string) => void): Rea
 	return (
 		<li key={sub.label}>
 			<button
-				className="block w-full text-left text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 py-1 px-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700"
+				className="block w-full text-left py-1 px-2 rounded transition-colors duration-200"
+				style={{ color: 'var(--text-muted)' }}
+				onMouseEnter={(e) => {
+					e.currentTarget.style.color = 'var(--primary)';
+					e.currentTarget.style.backgroundColor = 'var(--box-border)';
+				}}
+				onMouseLeave={(e) => {
+					e.currentTarget.style.color = 'var(--text-muted)';
+					e.currentTarget.style.backgroundColor = 'transparent';
+				}}
 				onClick={() => sub.doc && setSelectedDoc(sub.doc)}
 			>
 				{sub.label}
@@ -295,10 +300,18 @@ const appName = "AI Diary";
 export default function Sidebar() {
 	const { setSelectedDoc } = useDoc();
 	return (
-		<aside className="w-64 bg-gray-50 dark:bg-gray-900 h-screen p-4 border-r border-gray-200 dark:border-gray-800 overflow-y-auto">
+		<aside className="w-64 h-screen p-4 border-r overflow-y-auto sidebar-bg" 
+			style={{ backgroundColor: 'var(--sidebar-bg)', borderColor: 'var(--sidebar-border)' }}>
 			<div className="mb-6">
 				<button
-					className="w-full text-2xl font-bold text-primary dark:text-blue-400 py-2 px-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+					className="w-full text-2xl font-bold py-2 px-2 rounded transition-colors duration-200"
+					style={{ color: 'var(--primary)' }}
+					onMouseEnter={(e) => {
+						e.currentTarget.style.backgroundColor = 'var(--box-border)';
+					}}
+					onMouseLeave={(e) => {
+						e.currentTarget.style.backgroundColor = 'transparent';
+					}}
 					onClick={() => setSelectedDoc("")}
 				>
 					{appName}
@@ -309,7 +322,14 @@ export default function Sidebar() {
 					{categories.map((cat) => (
 						<li key={cat.name}>
 							<details className="group">
-								<summary className="cursor-pointer font-semibold text-lg text-gray-800 dark:text-gray-100 py-2 px-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800">
+								<summary className="cursor-pointer font-semibold text-lg py-2 px-2 rounded transition-colors duration-200"
+									style={{ color: 'var(--text-main)' }}
+									onMouseEnter={(e) => {
+										e.currentTarget.style.backgroundColor = 'var(--box-border)';
+									}}
+									onMouseLeave={(e) => {
+										e.currentTarget.style.backgroundColor = 'transparent';
+									}}>
 									{cat.name}
 								</summary>
 								<ul className="ml-4 mt-2 space-y-1">
